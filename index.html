@@ -156,6 +156,36 @@
     font-variation-settings: "opsz" 20;
   }
 
+  /* Scarcity visualization */
+  .scarcity-viz {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    padding: 26px 30px 22px;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .scarcity-viz::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-warm);
+  }
+  .scarcity-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .scarcity-viz svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* Strip de claims · 3 vectors */
   .vectors {
     display: grid;
@@ -661,6 +691,131 @@
     letter-spacing: 0.06em;
   }
 
+  /* ───── PHASES · 4-column horizontal roadmap ───── */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 30px 0 36px;
+  }
+  .phase {
+    background: var(--bg-panel);
+    padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .phase:hover { background: var(--bg-card); }
+  .phase-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .phase-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--line-strong);
+    letter-spacing: 0.05em;
+  }
+  .phase-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    color: var(--ink-faded);
+    background: var(--bg-main);
+  }
+  .phase.done .phase-num { color: var(--accent-2); }
+  .phase.done .phase-status {
+    color: var(--accent-2);
+    border-color: var(--accent-2);
+    background: rgba(139, 161, 87, 0.08);
+  }
+  .phase.active .phase-num { color: var(--accent); }
+  .phase.active .phase-status {
+    color: var(--bg-main);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .phase-title {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 48;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 4px;
+    letter-spacing: -0.015em;
+  }
+  .phase.active .phase-title { color: var(--accent); }
+  .phase-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faded);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .phase-bar {
+    height: 4px;
+    background: var(--bg-card);
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .phase-bar-fill {
+    height: 100%;
+    background: var(--accent-2);
+    transition: width 0.6s ease;
+  }
+  .phase.active .phase-bar-fill { background: var(--accent); }
+  .phase-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+  }
+  .phase-items li {
+    padding-left: 14px;
+    margin-bottom: 8px;
+    position: relative;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+  .phase-items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 1px;
+    background: var(--mute);
+  }
+  .phase.done .phase-items li::before { background: var(--accent-2); }
+  .phase.active .phase-items li::before { background: var(--accent); }
+  .phase-items li.phase-key {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .phase-items li.phase-key::before { display: none; }
+  .phase.done .phase-items li.phase-key { color: var(--accent-2); }
+  .phase.active .phase-items li.phase-key { color: var(--accent); }
+
   /* ───── FUNDING WATERFALL ───── */
   .wf {
     margin: 24px 0;
@@ -713,6 +868,214 @@
     font-weight: 500;
   }
 
+  /* ───── WATERFALL v2 · 3 stages ───── */
+  .waterfall-v2 {
+    display: grid;
+    grid-template-columns: 1fr 28px 1.4fr 28px 1fr;
+    gap: 0;
+    margin: 30px 0 36px;
+    align-items: stretch;
+  }
+  .wf-stage {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    padding: 22px 22px 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .wf-stage::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--accent);
+  }
+  .wf-stage.output::before { background: var(--accent-warm); }
+
+  .wf-stage-head {
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .wf-stage-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .wf-stage.output .wf-stage-num { color: var(--accent-warm); }
+  .wf-stage-name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-variation-settings: "opsz" 36;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .wf-stage-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--ink-faded);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .wf-stage-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .wf-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--mute);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+  }
+
+  .wf-item {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    gap: 10px;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 12px;
+  }
+  .wf-stage:not(.output) .wf-item {
+    grid-template-columns: minmax(0, 1fr) 50px 50px;
+  }
+  .wf-stage:not(.output) .wf-item.compact {
+    grid-template-columns: minmax(0, 1fr) 50px;
+  }
+  .wf-item-label {
+    color: var(--ink-soft);
+    font-size: 12px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .wf-item-label strong { color: var(--ink); font-weight: 500; }
+  .wf-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+  .wf-dot.founder { background: var(--accent-2); }
+  .wf-dot.investor { background: var(--accent-warm); }
+  .wf-item-bar {
+    height: 5px;
+    background: var(--bg-card);
+    overflow: hidden;
+  }
+  .wf-item-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.5s ease;
+  }
+  .wf-item-fill.founder { background: var(--accent-2); }
+  .wf-item-fill.investor { background: var(--accent-warm); }
+  .wf-item-fill.total { background: linear-gradient(90deg, var(--accent), var(--accent-dark)); height: 7px; margin-top: -1px; }
+  .wf-item-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    text-align: right;
+    font-feature-settings: "tnum";
+  }
+  .wf-item-val strong { color: var(--accent); font-weight: 500; }
+  .wf-item.wf-subtotal {
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--accent);
+  }
+  .wf-item.compact {
+    padding: 3px 0;
+  }
+
+  .wf-bucket {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--line-soft);
+  }
+  .wf-bucket:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .wf-bucket-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .wf-bucket-head span:first-child {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .wf-bucket-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .wf-output-card {
+    background: var(--bg-main);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 14px 16px 16px;
+    margin-bottom: 10px;
+  }
+  .wf-output-card:last-child { margin-bottom: 0; }
+  .wf-output-card.alt { border-left-color: var(--accent-bright); }
+  .wf-output-card.warm { border-left-color: var(--accent-warm); }
+  .wf-output-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .wf-output-value {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 60;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+    font-feature-settings: "tnum";
+  }
+  .wf-output-card.alt .wf-output-value { color: var(--accent-bright); }
+  .wf-output-card.warm .wf-output-value { color: var(--accent-warm); }
+  .wf-output-value small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faded);
+    letter-spacing: 0.05em;
+    margin-left: 4px;
+    font-weight: 400;
+  }
+  .wf-output-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+  }
+
   /* ───── MARKET FUNNEL VISUAL ───── */
   .funnel-svg-wrap {
     margin: 28px 0;
@@ -725,6 +1088,103 @@
     height: auto;
     display: block;
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ───── SCARCITY STRIP · 4 inline data points ───── */
+  .scarcity-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--accent-warm);
+    border: 1px solid var(--accent-warm);
+    margin: 30px 0 36px;
+  }
+  .scarcity-strip-item {
+    background: var(--bg-main);
+    padding: 18px 18px 20px;
+    text-align: left;
+    transition: background 0.2s;
+  }
+  .scarcity-strip-item:hover { background: rgba(196, 125, 58, 0.04); }
+  .scarcity-strip-num {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 72;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--accent-warm);
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    font-feature-settings: "tnum";
+  }
+  .scarcity-strip-num small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--accent-warm);
+    margin-left: 2px;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .scarcity-strip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    line-height: 1.55;
+    text-transform: uppercase;
+  }
+
+  /* ───── RISK MATRIX · risk paired with mitigation ───── */
+  .risk-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 28px 0 32px;
+  }
+  .risk-row {
+    display: grid;
+    grid-template-columns: 1fr 32px 1fr;
+    background: var(--bg-main);
+    align-items: stretch;
+  }
+  .risk-cell {
+    padding: 18px 22px 20px;
+    background: var(--bg-panel);
+  }
+  .risk-cell.risk {
+    background: rgba(196, 125, 58, 0.05);
+    border-left: 3px solid var(--accent-warm);
+  }
+  .risk-cell.mitigation {
+    background: rgba(86, 107, 52, 0.05);
+    border-left: 3px solid var(--accent);
+  }
+  .risk-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .risk-cell.risk .risk-label { color: var(--accent-warm); }
+  .risk-cell.mitigation .risk-label { color: var(--accent); }
+  .risk-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .risk-cell.mitigation .risk-text { color: var(--ink); }
+  .risk-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    background: var(--bg-main);
   }
 
   /* ───── FOOTER ───── */
@@ -757,6 +1217,12 @@
     .landscape-tag { text-align: left; }
     .wf-row { grid-template-columns: 1fr 80px; }
     .wf-track { display: none; }
+    .phases { grid-template-columns: 1fr; }
+    .scarcity-strip { grid-template-columns: repeat(2, 1fr); }
+    .waterfall-v2 { grid-template-columns: 1fr; }
+    .wf-arrow { transform: rotate(90deg); padding: 8px 0; }
+    .risk-row { grid-template-columns: 1fr; }
+    .risk-arrow { transform: rotate(90deg); padding: 4px 0; }
   }
 </style>
 </head>
@@ -769,7 +1235,7 @@
       <div class="top-logo">LV</div>
       <div>
         <div>Loma Verde SRL</div>
-        <strong>Investor Memo · v1.0</strong>
+        <strong>Investor Memo · v1.1</strong>
       </div>
     </div>
     <div class="page-top-right">
@@ -781,8 +1247,53 @@
   <!-- ═══════ HERO · COVER ═══════ -->
   <section class="hero">
     <div class="hero-eyebrow">Argentina · Cannabigerol Cultivation Platform</div>
-    <h1>The mother <em>cannabinoid</em>,<br>finally cultivated <em>at scale</em>.</h1>
-    <p class="hero-sub">Loma Verde is a biodynamic cannabis cultivation platform on 8,000 m² in greater Buenos Aires, focused on cannabigerol (CBG) and other minor cannabinoids. We supply pharmaceutical-grade cultivation services to a licensed R&amp;D program serving Argentina's national patient registry — a 410,000-patient market growing 23.9% annually.</p>
+    <h1>Less than 1% of the plant.<br>410,000 <em>patients</em>.<br>One <em>supply bottleneck</em>.</h1>
+    <p class="hero-sub">Cannabigerol (CBG) accumulates at 0.1–0.5% in conventional cannabis flower. Specialized stable cultivars reach 15–18%. Argentina's federally registered patient program now exceeds 410,000 active users with 80,000+ on waitlist. <strong>The molecule is scarce by biology. The patient base is not.</strong> Loma Verde operates 8,000 m² of biodynamic cultivation specifically engineered to close that gap.</p>
+
+    <!-- ─── SCARCITY VISUALIZATION ─── -->
+    <div class="scarcity-viz">
+      <div class="scarcity-title">The CBG supply gap · why this is a category opportunity</div>
+      <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="CBG supply gap visualization">
+        <defs>
+          <linearGradient id="bar1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a8b09f"/>
+            <stop offset="100%" stop-color="#8ba157"/>
+          </linearGradient>
+          <linearGradient id="bar2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6a8240"/>
+            <stop offset="100%" stop-color="#566b34"/>
+          </linearGradient>
+          <linearGradient id="bar3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c47d3a"/>
+            <stop offset="100%" stop-color="#a84f2a"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Row 1: Conventional plant -->
+        <text x="0" y="26" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a8574" letter-spacing="1">CONVENTIONAL FLOWER</text>
+        <text x="0" y="44" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#1f2a1e">CBG content baseline</text>
+        <rect x="280" y="22" width="14" height="32" fill="url(#bar1)"/>
+        <text x="304" y="44" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" fill="#566b34">0.1 – 0.5%</text>
+        <line x1="280" y1="62" x2="780" y2="62" stroke="#e2ddc9" stroke-dasharray="2 4"/>
+
+        <!-- Row 2: Stabilized cultivars -->
+        <text x="0" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a8574" letter-spacing="1">STABILIZED CULTIVARS</text>
+        <text x="0" y="110" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#1f2a1e">Hemp Trading × UPV · published 2020</text>
+        <rect x="280" y="84" width="500" height="32" fill="url(#bar2)"/>
+        <text x="290" y="105" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" fill="#faf8f3">15 – 18% · stable Type IV genetics</text>
+        <line x1="280" y1="126" x2="780" y2="126" stroke="#e2ddc9" stroke-dasharray="2 4"/>
+
+        <!-- Row 3: Patient demand -->
+        <text x="0" y="158" font-family="JetBrains Mono, monospace" font-size="10" fill="#7a8574" letter-spacing="1">REPROCANN DEMAND</text>
+        <text x="0" y="176" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#1f2a1e">Active registered patients in Argentina</text>
+        <rect x="280" y="148" width="500" height="32" fill="url(#bar3)"/>
+        <text x="290" y="170" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" fill="#faf8f3">410,000+ active · 80,000+ on waitlist</text>
+
+        <!-- Annotation arrow -->
+        <path d="M 760 60 Q 770 80, 760 120" stroke="#a84f2a" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+        <text x="540" y="208" font-family="JetBrains Mono, monospace" font-size="9" fill="#a84f2a" letter-spacing="1">↑ THE GAP IS THE OPPORTUNITY · CULTIVAR SUPPLY IS THE BOTTLENECK</text>
+      </svg>
+    </div>
 
     <div class="vectors">
       <div class="vector">
@@ -819,6 +1330,25 @@
     <div class="page-num">02 / The opportunity</div>
     <h2>Why <em>CBG</em>, why <em>now</em>.</h2>
     <p class="page-lede">Cannabigerol is the precursor cannabinoid — the molecule the plant converts into THC and CBD as it matures. It accounts for less than 1% of dry weight in conventional flower. That scarcity is exactly what makes it a category opportunity in 2026.</p>
+
+    <div class="scarcity-strip">
+      <div class="scarcity-strip-item">
+        <div class="scarcity-strip-num">12+</div>
+        <div class="scarcity-strip-label">Active CBG clinical trials<br>Phases I–II · ClinicalTrials.gov</div>
+      </div>
+      <div class="scarcity-strip-item">
+        <div class="scarcity-strip-num">60<small>%</small></div>
+        <div class="scarcity-strip-label">Of cannabinoid R&amp;D spend<br>now targets minor cannabinoids</div>
+      </div>
+      <div class="scarcity-strip-item">
+        <div class="scarcity-strip-num">42<small>%</small></div>
+        <div class="scarcity-strip-label">Of new cannabinoid products<br>incorporate CBG · 2025 launches</div>
+      </div>
+      <div class="scarcity-strip-item">
+        <div class="scarcity-strip-num">145<small>%</small></div>
+        <div class="scarcity-strip-label">YoY growth in CBG-dominant<br>product launches · early adopter US states</div>
+      </div>
+    </div>
 
     <div class="prose">
       <h3>The science is finally catching up</h3>
@@ -1122,44 +1652,77 @@
     </table>
 
     <div class="prose">
-      <h3>Roadmap · next 180 days</h3>
+      <h3>Execution roadmap · 4 phases through 2027</h3>
+      <p>Foundation is already built. The investor capital deploys against Acceleration. Scaling and Compounding are the value-creation horizon.</p>
     </div>
 
-    <div class="timeline">
-      <div class="step done">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>Site acquired and Phase 1 built</strong>8,000 m² Escobar · perimeter, greenhouses, security operational</div>
-        <div class="step-meta">Done · 2024–2025</div>
+    <div class="phases">
+      <div class="phase done">
+        <div class="phase-head">
+          <div class="phase-num">01</div>
+          <div class="phase-status">Done</div>
+        </div>
+        <div class="phase-title">Foundation</div>
+        <div class="phase-period">2024 — Q1 2026</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:100%"></div></div>
+        <ul class="phase-items">
+          <li>8,000 m² site acquired</li>
+          <li>5 Phase 1 greenhouses operational</li>
+          <li>Perimeter security + drying barn built</li>
+          <li>R&amp;D service agreement structured</li>
+          <li class="phase-key">USD 202K sunk CAPEX deployed</li>
+        </ul>
       </div>
-      <div class="step done">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>R&amp;D entity structure validated</strong>Service agreement framework with Sweet Pacha · legal review complete</div>
-        <div class="step-meta">Done · Q1 2026</div>
+
+      <div class="phase active">
+        <div class="phase-head">
+          <div class="phase-num">02</div>
+          <div class="phase-status">Now</div>
+        </div>
+        <div class="phase-title">Acceleration</div>
+        <div class="phase-period">Q2 — Q4 2026</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:35%"></div></div>
+        <ul class="phase-items">
+          <li>Seed round close · USD 250K</li>
+          <li>2 Phase 2 greenhouses online</li>
+          <li>Climate-controlled drying facility</li>
+          <li>Tissue-culture lab · 15 stable genetics</li>
+          <li class="phase-key">First revenue M7 · USD 22K monthly</li>
+        </ul>
       </div>
-      <div class="step active">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>Seed round close</strong>USD 250K · founders + external investors</div>
-        <div class="step-meta">Now · Q2 2026</div>
+
+      <div class="phase pending">
+        <div class="phase-head">
+          <div class="phase-num">03</div>
+          <div class="phase-status">Pending</div>
+        </div>
+        <div class="phase-title">Scaling</div>
+        <div class="phase-period">Q1 — Q3 2027</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:0%"></div></div>
+        <ul class="phase-items">
+          <li>10 greenhouses operational</li>
+          <li>120 Plant Library parcels active</li>
+          <li>ISO 9001 certification complete</li>
+          <li>Demeter biodynamic certification track</li>
+          <li class="phase-key">Run-rate USD 24–32K monthly</li>
+        </ul>
       </div>
-      <div class="step">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>Phase 2 greenhouses + climate facility online</strong>From 5 to 7 operational greenhouses · 6 months ahead of base plan</div>
-        <div class="step-meta">Q3 2026</div>
-      </div>
-      <div class="step">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>Tissue-culture lab + first 15 stable genetics</strong>Clean-stock CBG cultivars validated and propagated</div>
-        <div class="step-meta">Q4 2026</div>
-      </div>
-      <div class="step">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>First service revenue at run-rate</strong>USD 22K monthly fee · 60 active Plant Library parcels</div>
-        <div class="step-meta">Month 7</div>
-      </div>
-      <div class="step">
-        <div class="step-dot"></div>
-        <div class="step-text"><strong>ISO 9001 + Demeter biodynamic gap analysis complete</strong>Certification track started · estimated 12-month path</div>
-        <div class="step-meta">Q1 2027</div>
+
+      <div class="phase pending">
+        <div class="phase-head">
+          <div class="phase-num">04</div>
+          <div class="phase-status">Future</div>
+        </div>
+        <div class="phase-title">Compounding</div>
+        <div class="phase-period">Q4 2027 — 2028</div>
+        <div class="phase-bar"><div class="phase-bar-fill" style="width:0%"></div></div>
+        <ul class="phase-items">
+          <li>35 stable genetic lines in library</li>
+          <li>27–37 non-profit clients via Sweet Pacha</li>
+          <li>Loan note matures · M24 USD 176K bullet</li>
+          <li>Optionality: Series A or strategic exit</li>
+          <li class="phase-key">~5,500 patients reached indirectly</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1179,10 +1742,64 @@
       <p>The 180-day post-funding plan (available as a separate operational document) details week-by-week milestones, hiring targets, KPI cadence, and contingency plans for the most likely operational risks. It is not aspirational — it is a working tool already being executed against by the operating team.</p>
     </div>
 
-    <div class="callout warm">
-      <div class="callout-tag">Risk we own</div>
-      <p>Argentina is not a politically stable jurisdiction. The 2025 dissolution of ARICCAME demonstrated that. <strong>Our specific channel — patient registry under the Ministry of Health — has remained operational throughout political transitions</strong> because it serves an established patient base with formal medical credentialing. But this is Argentina, and a US investor needs to understand: the regulatory environment can shift faster than in most OECD countries.</p>
-      <p>Our mitigation is structural: we operate through the most institutionally protected channel (registered patients with prescribing physicians), our CAPEX is paid for in pesos against USD-denominated revenue (natural FX hedge), and our service-only structure means we do not hold inventory, do not own product, and do not depend on export licensing to monetize.</p>
+    <div class="prose">
+      <h3>Risk matrix · 4 vectors, 4 mitigations</h3>
+      <p>Cannabis investing in Argentina carries real risks. Hiding them would insult the reader. The matrix below pairs each risk we identify with the structural choice that mitigates it.</p>
+    </div>
+
+    <div class="risk-matrix">
+      <div class="risk-row">
+        <div class="risk-cell risk">
+          <div class="risk-label">Risk · Regulatory</div>
+          <div class="risk-text">Argentine cannabis policy is volatile. ARICCAME (the commercial-track regulator) was dissolved in 2025.</div>
+        </div>
+        <div class="risk-arrow">→</div>
+        <div class="risk-cell mitigation">
+          <div class="risk-label">Mitigation · Channel selection</div>
+          <div class="risk-text">We operate exclusively in the patient-registry channel under the Ministry of Health, which has remained operational across all political transitions since 2017.</div>
+        </div>
+      </div>
+
+      <div class="risk-row">
+        <div class="risk-cell risk">
+          <div class="risk-label">Risk · Currency</div>
+          <div class="risk-text">Argentine peso devaluation has historically been severe. Local CAPEX in pesos exposed to inflation.</div>
+        </div>
+        <div class="risk-arrow">→</div>
+        <div class="risk-cell mitigation">
+          <div class="risk-label">Mitigation · USD revenue</div>
+          <div class="risk-text">CAPEX paid in pesos (which depreciate) against revenue contracted in USD-equivalent terms with Sweet Pacha. Natural FX hedge structurally embedded.</div>
+        </div>
+      </div>
+
+      <div class="risk-row">
+        <div class="risk-cell risk">
+          <div class="risk-label">Risk · Inventory</div>
+          <div class="risk-text">Cannabis cultivation typically carries crop loss, contamination, and unsold inventory risk that compresses margins.</div>
+        </div>
+        <div class="risk-arrow">→</div>
+        <div class="risk-cell mitigation">
+          <div class="risk-label">Mitigation · Service-only model</div>
+          <div class="risk-text">We sell cultivation services, not product. Plants are owned by the R&amp;D entity throughout. Loma Verde holds no inventory and bears no crop-loss exposure.</div>
+        </div>
+      </div>
+
+      <div class="risk-row">
+        <div class="risk-cell risk">
+          <div class="risk-label">Risk · Concentration</div>
+          <div class="risk-text">Single-client dependency on Sweet Pacha is a structural concentration risk in early years.</div>
+        </div>
+        <div class="risk-arrow">→</div>
+        <div class="risk-cell mitigation">
+          <div class="risk-label">Mitigation · 150-patient cap</div>
+          <div class="risk-text">Argentine regulation caps non-profit caregivers at 150 patients each, forcing buyer diversification. By Year 3 we serve 27–37 non-profits indirectly through Sweet Pacha — no single end-buyer over 4% of revenue.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-tag">The bottom line</div>
+      <p>We are not pretending these risks don't exist. We are showing the investor that <strong>each one was anticipated in the structure of the company before the round was raised</strong>. That structural approach is, by itself, a signal about how the team operates.</p>
     </div>
   </section>
 
@@ -1227,35 +1844,134 @@
       <h3>The waterfall</h3>
     </div>
 
-    <div class="panel">
-      <div class="panel-title">Round structure · USD 250,000</div>
-      <div class="panel-tag">Founder equity + external investor capital</div>
+    <div class="waterfall-v2">
+      <div class="wf-stage">
+        <div class="wf-stage-head">
+          <div class="wf-stage-num">01</div>
+          <div class="wf-stage-name">Sources</div>
+          <div class="wf-stage-tag">Where capital comes from</div>
+        </div>
+        <div class="wf-stage-body">
+          <div class="wf-item">
+            <div class="wf-item-label"><span class="wf-dot founder"></span>Founder 1 · equity</div>
+            <div class="wf-item-bar"><div class="wf-item-fill founder" style="width:12%"></div></div>
+            <div class="wf-item-val">$30K</div>
+          </div>
+          <div class="wf-item">
+            <div class="wf-item-label"><span class="wf-dot founder"></span>Founder 2 · equity</div>
+            <div class="wf-item-bar"><div class="wf-item-fill founder" style="width:12%"></div></div>
+            <div class="wf-item-val">$30K</div>
+          </div>
+          <div class="wf-item">
+            <div class="wf-item-label"><span class="wf-dot founder"></span>Founder 3 · equity</div>
+            <div class="wf-item-bar"><div class="wf-item-fill founder" style="width:12%"></div></div>
+            <div class="wf-item-val">$30K</div>
+          </div>
+          <div class="wf-item">
+            <div class="wf-item-label"><span class="wf-dot investor"></span>External investor(s)</div>
+            <div class="wf-item-bar"><div class="wf-item-fill investor" style="width:64%"></div></div>
+            <div class="wf-item-val">$160K</div>
+          </div>
+          <div class="wf-item wf-subtotal">
+            <div class="wf-item-label"><strong>Total round</strong></div>
+            <div class="wf-item-bar"><div class="wf-item-fill total" style="width:100%"></div></div>
+            <div class="wf-item-val"><strong>$250K</strong></div>
+          </div>
+        </div>
+      </div>
 
-      <div class="wf">
-        <div class="wf-row">
-          <div class="wf-label">Founder 1 · equity contribution</div>
-          <div class="wf-track"><div class="wf-fill" style="width:12%"></div></div>
-          <div class="wf-val">$30K</div>
+      <div class="wf-arrow">→</div>
+
+      <div class="wf-stage">
+        <div class="wf-stage-head">
+          <div class="wf-stage-num">02</div>
+          <div class="wf-stage-name">Uses</div>
+          <div class="wf-stage-tag">Grouped by capital function</div>
         </div>
-        <div class="wf-row">
-          <div class="wf-label">Founder 2 · equity contribution</div>
-          <div class="wf-track"><div class="wf-fill" style="width:12%"></div></div>
-          <div class="wf-val">$30K</div>
+        <div class="wf-stage-body">
+          <div class="wf-bucket">
+            <div class="wf-bucket-head">
+              <span>Capacity expansion</span>
+              <span class="wf-bucket-pct">$110K · 44%</span>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Phase 2 greenhouses · 2 units</div>
+              <div class="wf-item-val">$60K</div>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Climate-controlled drying</div>
+              <div class="wf-item-val">$55K</div>
+            </div>
+          </div>
+
+          <div class="wf-bucket">
+            <div class="wf-bucket-head">
+              <span>Quality &amp; genetics</span>
+              <span class="wf-bucket-pct">$106K · 42%</span>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Tissue-culture lab</div>
+              <div class="wf-item-val">$38K</div>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Fertigation system</div>
+              <div class="wf-item-val">$28K</div>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">LED supplemental lighting</div>
+              <div class="wf-item-val">$22K</div>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Analytical · HPLC</div>
+              <div class="wf-item-val">$18K</div>
+            </div>
+          </div>
+
+          <div class="wf-bucket">
+            <div class="wf-bucket-head">
+              <span>Certification &amp; reserve</span>
+              <span class="wf-bucket-pct">$34K · 14%</span>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">ISO 9001 + Demeter track</div>
+              <div class="wf-item-val">$15K</div>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Operational contingency</div>
+              <div class="wf-item-val">$14K</div>
+            </div>
+            <div class="wf-item compact">
+              <div class="wf-item-label">Reserve buffer</div>
+              <div class="wf-item-val">$5K</div>
+            </div>
+          </div>
         </div>
-        <div class="wf-row">
-          <div class="wf-label">Founder 3 · equity contribution</div>
-          <div class="wf-track"><div class="wf-fill" style="width:12%"></div></div>
-          <div class="wf-val">$30K</div>
+      </div>
+
+      <div class="wf-arrow">→</div>
+
+      <div class="wf-stage output">
+        <div class="wf-stage-head">
+          <div class="wf-stage-num">03</div>
+          <div class="wf-stage-name">Output</div>
+          <div class="wf-stage-tag">Self-sustaining by month 7</div>
         </div>
-        <div class="wf-row">
-          <div class="wf-label">External investor(s) · open instrument</div>
-          <div class="wf-track"><div class="wf-fill warm" style="width:64%"></div></div>
-          <div class="wf-val">$160K</div>
-        </div>
-        <div class="wf-row">
-          <div class="wf-label">Total round</div>
-          <div class="wf-track"><div class="wf-fill total" style="width:100%"></div></div>
-          <div class="wf-val">$250K</div>
+        <div class="wf-stage-body">
+          <div class="wf-output-card">
+            <div class="wf-output-label">First service revenue</div>
+            <div class="wf-output-value">$22K<small>/month</small></div>
+            <div class="wf-output-meta">M7 · contracted with Sweet Pacha</div>
+          </div>
+          <div class="wf-output-card alt">
+            <div class="wf-output-label">Run-rate by Year 2</div>
+            <div class="wf-output-value">$24–32K<small>/month</small></div>
+            <div class="wf-output-meta">EBITDA $145K base · $215K optimistic</div>
+          </div>
+          <div class="wf-output-card warm">
+            <div class="wf-output-label">Loan note · M24 bullet</div>
+            <div class="wf-output-value">$192K<small>total</small></div>
+            <div class="wf-output-meta">USD 16K M12 + $176K M24</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1315,7 +2031,7 @@
   <!-- ═══════ FOOTER ═══════ -->
   <div class="footer">
     <div>
-      <strong>Loma Verde SRL</strong> · Investor Memo v1.0 · April 2026<br>
+      <strong>Loma Verde SRL</strong> · Investor Memo v1.1 · April 2026<br>
       Confidential · Distribution restricted to recipients identified by sender
     </div>
     <div class="footer-right">
