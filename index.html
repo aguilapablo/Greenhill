@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loma Verde · Investor Memo · April 2026</title>
+<meta name="description" content="Investor memo · Argentina-based cannabigerol (CBG) cultivation platform · biodynamic agriculture meets pharmaceutical-grade R&D · USD 250k seed round." />
+<meta name="theme-color" content="#566b34" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Loma Verde · Investor Memo" />
+<meta property="og:description" content="Cannabigerol cultivation platform · Argentina · USD 250k seed round" />
+<meta property="og:locale" content="en_US" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #faf8f3;
+    --bg-panel: #f4f1e8;
+    --bg-card: #ede9dc;
+    --bg-elevated: #e7e2d0;
+    --line: #d5cfb8;
+    --line-soft: #e2ddc9;
+    --line-strong: #b8b095;
+    --ink: #1f2a1e;
+    --ink-soft: #4a5a43;
+    --ink-faded: #7a8574;
+    --mute: #a8b09f;
+    --accent: #566b34;
+    --accent-bright: #6a8240;
+    --accent-2: #8ba157;
+    --accent-warm: #c47d3a;
+    --accent-danger: #a84f2a;
+    --accent-dark: #3a4a22;
+    --grid: rgba(86, 107, 52, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    background: var(--bg-main);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 14;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, black 30%, transparent 90%);
+    opacity: 0.45;
+  }
+
+  a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+  a:hover { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ───── LAYOUT ───── */
+  .doc {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 80px 56px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ───── PAGE TOP ───── */
+  .page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 62px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+  }
+  .page-top-left { display: flex; align-items: center; gap: 12px; }
+  .top-logo {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 9px;
+    background: var(--bg-main);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .top-logo::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    border: 1px dashed rgba(86, 107, 52, 0.4);
+  }
+  .page-top-right { text-align: right; line-height: 1.7; }
+  .page-top strong { color: var(--accent); font-weight: 500; }
+
+  /* ───── PAGE 1: HERO ───── */
+  .hero {
+    margin-bottom: 90px;
+  }
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .hero-sub {
+    color: var(--ink-soft);
+    font-size: 19px;
+    line-height: 1.55;
+    max-width: 720px;
+    margin-bottom: 42px;
+    font-variation-settings: "opsz" 20;
+  }
+
+  /* Strip de claims · 3 vectors */
+  .vectors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 30px;
+  }
+  .vector {
+    background: var(--bg-panel);
+    padding: 26px 24px 28px;
+    position: relative;
+  }
+  .vector::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 32px;
+    height: 2px;
+    background: var(--accent);
+  }
+  .vector:nth-child(2)::before { background: var(--accent-warm); }
+  .vector:nth-child(3)::before { background: var(--accent-dark); }
+  .vector-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .vector-claim {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 32;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.25;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+  .vector-claim em {
+    color: var(--accent);
+    font-style: italic;
+  }
+  .vector:nth-child(2) .vector-claim em { color: var(--accent-warm); }
+  .vector:nth-child(3) .vector-claim em { color: var(--accent-dark); }
+
+  /* ───── ASK BANNER ───── */
+  .ask-banner {
+    background: var(--ink);
+    color: var(--bg-main);
+    padding: 28px 32px 30px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+  }
+  .ask-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-warm);
+  }
+  .ask-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--accent-2);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .ask-headline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-variation-settings: "opsz" 48;
+    font-size: 26px;
+    color: var(--bg-main);
+    line-height: 1.2;
+  }
+  .ask-headline em {
+    color: var(--accent-warm);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .ask-amount {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 96;
+    font-weight: 400;
+    font-size: 56px;
+    color: var(--accent-2);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-align: right;
+  }
+  .ask-amount small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--mute);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* ───── SECTIONS ───── */
+  .page {
+    margin-bottom: 84px;
+    scroll-margin-top: 24px;
+  }
+  .page:last-child { margin-bottom: 0; }
+  .page-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .page-num::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .page h2 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 96;
+    font-weight: 300;
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .page h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .page-lede {
+    color: var(--ink-soft);
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 36px;
+    max-width: 720px;
+    font-variation-settings: "opsz" 18;
+  }
+
+  /* ───── PROSE ───── */
+  .prose {
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    font-variation-settings: "opsz" 17;
+    max-width: 760px;
+  }
+  .prose.wide { max-width: 100%; }
+  .prose p { margin-bottom: 20px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--ink); font-weight: 500; }
+  .prose em { font-style: italic; color: var(--accent); }
+  .prose h3 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 48;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 44px 0 16px;
+    letter-spacing: -0.015em;
+  }
+  .prose h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 32px 0 12px;
+  }
+  .prose ul {
+    margin: 18px 0 22px 0;
+    list-style: none;
+  }
+  .prose ul li {
+    padding-left: 22px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .prose ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 14px;
+    top: 1px;
+  }
+  .prose ol { margin: 18px 0 22px 22px; }
+  .prose ol li { margin-bottom: 10px; }
+  .prose blockquote {
+    border-left: 2px solid var(--accent);
+    padding: 6px 0 6px 22px;
+    margin: 26px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-variation-settings: "opsz" 36;
+  }
+  .prose hr { border: none; border-top: 1px solid var(--line); margin: 36px 0; }
+
+  /* ───── CARDS / METRICS ───── */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 30px 0 36px;
+  }
+  .metrics.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .metrics.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .metric {
+    background: var(--bg-panel);
+    padding: 22px 22px 24px;
+    transition: background 0.2s;
+  }
+  .metric:hover { background: var(--bg-card); }
+  .metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .metric-value {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 72;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    font-feature-settings: "tnum";
+  }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.warm { color: var(--accent-warm); }
+  .metric-value small {
+    font-size: 13px;
+    color: var(--ink-faded);
+    margin-left: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .metric-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    line-height: 1.55;
+  }
+
+  /* ───── TABLES ───── */
+  table.t {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 13.5px;
+    font-variation-settings: "opsz" 14;
+  }
+  .t th {
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-panel);
+  }
+  .t td {
+    padding: 12px 14px;
+    border-bottom: 1px dashed var(--line-soft);
+    color: var(--ink-soft);
+    font-feature-settings: "tnum";
+    vertical-align: top;
+  }
+  .t td:first-child { color: var(--ink); }
+  .t tr:hover td { background: rgba(86, 107, 52, 0.025); }
+  .t tr:last-child td { border-bottom: 1px solid var(--line); }
+  .t .hi { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; }
+  .t .total td {
+    border-top: 1px solid var(--accent);
+    background: rgba(86, 107, 52, 0.05);
+    font-weight: 500;
+  }
+
+  .chip {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--bg-main);
+  }
+  .chip.active { color: var(--accent); border-color: var(--accent); background: rgba(86, 107, 52, 0.04); }
+  .chip.warm { color: var(--accent-warm); border-color: var(--accent-warm); }
+  .chip.dim { color: var(--ink-faded); }
+
+  /* ───── CALLOUT ───── */
+  .callout {
+    border: 1px solid var(--accent);
+    background: rgba(86, 107, 52, 0.04);
+    padding: 22px 26px 24px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .callout-tag {
+    position: absolute;
+    top: -9px;
+    left: 22px;
+    background: var(--bg-main);
+    padding: 0 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .callout p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.6; }
+  .callout p + p { margin-top: 12px; }
+  .callout.warm { border-color: var(--accent-warm); background: rgba(196, 125, 58, 0.05); }
+  .callout.warm .callout-tag { color: var(--accent-warm); }
+  .callout.dim { border-color: var(--line-strong); background: var(--bg-panel); }
+  .callout.dim .callout-tag { color: var(--ink-soft); }
+
+  /* ───── COMPARABLES PANEL ───── */
+  .panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    padding: 26px 28px 28px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .panel-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-variation-settings: "opsz" 36;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .panel-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faded);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  /* ───── COMPETITIVE LANDSCAPE GRID ───── */
+  .landscape {
+    display: grid;
+    grid-template-columns: 180px 1fr 100px;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line-soft);
+  }
+  .landscape:last-child { border-bottom: none; }
+  .landscape-name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .landscape-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .landscape-tag {
+    text-align: right;
+  }
+  .landscape-tag .chip { font-size: 9px; }
+
+  /* ───── BIG NUMBER ───── */
+  .big-number {
+    margin: 30px 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .big-number-value {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    font-feature-settings: "tnum";
+  }
+  .big-number-value small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-left: 8px;
+    letter-spacing: 0.08em;
+  }
+  .big-number-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  /* ───── TIMELINE / PIPELINE ───── */
+  .timeline {
+    margin: 28px 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--line);
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 24px 1fr 100px;
+    gap: 16px;
+    padding: 13px 0;
+    align-items: center;
+  }
+  .step-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    border: 2px solid var(--line);
+    position: relative;
+    z-index: 1;
+  }
+  .step.active .step-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(86, 107, 52, 0.15);
+  }
+  .step.done .step-dot {
+    background: var(--accent-2);
+    border-color: var(--accent-2);
+  }
+  .step-text {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .step-text strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .step.active .step-text strong { color: var(--accent); }
+  .step-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faded);
+    text-align: right;
+    letter-spacing: 0.06em;
+  }
+
+  /* ───── FUNDING WATERFALL ───── */
+  .wf {
+    margin: 24px 0;
+  }
+  .wf-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 110px;
+    align-items: center;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line-soft);
+  }
+  .wf-row:last-child {
+    border-top: 1px solid var(--accent);
+    border-bottom: none;
+    padding-top: 18px;
+    margin-top: 4px;
+  }
+  .wf-label { font-size: 14px; color: var(--ink-soft); }
+  .wf-row:last-child .wf-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--accent);
+  }
+  .wf-track {
+    height: 9px;
+    background: var(--bg-card);
+    position: relative;
+    overflow: hidden;
+  }
+  .wf-fill {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  }
+  .wf-fill.warm { background: linear-gradient(90deg, var(--accent-warm), #dfa36f); }
+  .wf-fill.total { background: linear-gradient(90deg, var(--accent), var(--accent-dark)); height: 12px; margin-top: -1.5px; }
+  .wf-val {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    color: var(--ink);
+    font-feature-settings: "tnum";
+  }
+  .wf-row:last-child .wf-val {
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  /* ───── MARKET FUNNEL VISUAL ───── */
+  .funnel-svg-wrap {
+    margin: 28px 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    padding: 22px 24px;
+  }
+  .funnel-svg-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ───── FOOTER ───── */
+  .footer {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+  }
+  .footer-right { text-align: right; line-height: 1.7; }
+  .footer strong { color: var(--ink-soft); }
+
+  /* ───── RESPONSIVE ───── */
+  @media (max-width: 800px) {
+    .doc { padding: 40px 24px 60px; }
+    .vectors { grid-template-columns: 1fr; }
+    .ask-banner { grid-template-columns: 1fr; gap: 14px; }
+    .ask-amount { text-align: left; }
+    .metrics { grid-template-columns: 1fr; }
+    .metrics.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .landscape { grid-template-columns: 1fr; gap: 4px; }
+    .landscape-tag { text-align: left; }
+    .wf-row { grid-template-columns: 1fr 80px; }
+    .wf-track { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- ═══════ HEADER STRIP ═══════ -->
+  <div class="page-top">
+    <div class="page-top-left">
+      <div class="top-logo">LV</div>
+      <div>
+        <div>Loma Verde SRL</div>
+        <strong>Investor Memo · v1.0</strong>
+      </div>
+    </div>
+    <div class="page-top-right">
+      <div>April 2026 · Confidential</div>
+      <div>Escobar · Buenos Aires · Argentina</div>
+    </div>
+  </div>
+
+  <!-- ═══════ HERO · COVER ═══════ -->
+  <section class="hero">
+    <div class="hero-eyebrow">Argentina · Cannabigerol Cultivation Platform</div>
+    <h1>The mother <em>cannabinoid</em>,<br>finally cultivated <em>at scale</em>.</h1>
+    <p class="hero-sub">Loma Verde is a biodynamic cannabis cultivation platform on 8,000 m² in greater Buenos Aires, focused on cannabigerol (CBG) and other minor cannabinoids. We supply pharmaceutical-grade cultivation services to a licensed R&amp;D program serving Argentina's national patient registry — a 410,000-patient market growing 23.9% annually.</p>
+
+    <div class="vectors">
+      <div class="vector">
+        <div class="vector-label">01 · The science</div>
+        <div class="vector-claim">Real <em>R&amp;D pipeline</em>. 50+ companies. Phase II trials underway.</div>
+      </div>
+      <div class="vector">
+        <div class="vector-label">02 · The market</div>
+        <div class="vector-claim">410,000 registered <em>patients</em>. 80,000 on waitlist. Demand exceeds supply.</div>
+      </div>
+      <div class="vector">
+        <div class="vector-label">03 · The opportunity</div>
+        <div class="vector-claim">First mover in <em>biodynamic CBG</em> for the only stable LATAM regulatory channel.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ASK BANNER ═══════ -->
+  <div class="ask-banner">
+    <div>
+      <div class="ask-label">The ask</div>
+      <div class="ask-headline">Seed round · open to <em>structure</em></div>
+    </div>
+    <div class="ask-amount">$250K<small>USD · 24 months</small></div>
+  </div>
+
+  <div class="prose" style="margin-bottom:28px">
+    <p>Founders contribute USD 90K (3 partners × USD 30K each as equity). External round of <strong>USD 160K</strong> open to multiple instruments: <strong>convertible note, SAFE, equity at agreed valuation, or fixed-return loan note</strong> (10% USD annual, 24-month term). Our preference: anchor on economics (USD 192K total return on the loan note structure, or equivalent equity), let the investor pick the instrument that fits their portfolio mandate.</p>
+    <p>Capital deploys to growth CAPEX: two additional greenhouses, controlled-atmosphere drying facility, and a tissue-culture lab for clean genetics. Working capital is covered by recurring service fees from our existing R&amp;D client starting month 7.</p>
+  </div>
+
+  <!-- ═══════ PAGE 2 · THE OPPORTUNITY (CBG) ═══════ -->
+  <section class="page" id="opportunity">
+    <div class="page-num">02 / The opportunity</div>
+    <h2>Why <em>CBG</em>, why <em>now</em>.</h2>
+    <p class="page-lede">Cannabigerol is the precursor cannabinoid — the molecule the plant converts into THC and CBD as it matures. It accounts for less than 1% of dry weight in conventional flower. That scarcity is exactly what makes it a category opportunity in 2026.</p>
+
+    <div class="prose">
+      <h3>The science is finally catching up</h3>
+      <p>For a decade, CBG sat in CBD's shadow as an academic curiosity. That changed in 2024–2025. The first <strong>double-blind, placebo-controlled human trial</strong> of isolated CBG (March 2024) showed statistically significant reductions in anxiety and stress without intoxication or cognitive impairment. Penn State's <strong>Phase I trial in chemotherapy-induced peripheral neuropathy</strong> began enrolling in 2025. The University of Arkansas opened a <strong>Phase II trial in ADHD</strong> (NCT06115603, currently recruiting). MIRA Pharmaceuticals' preclinical CBG analog matched morphine for inflammatory pain.</p>
+      <p>This is not hype. It is the standard pre-clinical-to-Phase II progression that built the CBD market a decade earlier. <strong>The difference: CBG is non-psychoactive</strong>, which removes the cultural and prescriptive friction that THC carries — particularly in pediatric, oncology, and geriatric populations.</p>
+
+      <h3>The market is moving from CBD-only to multi-cannabinoid</h3>
+      <p>Current market consensus across multiple analyst firms (DelveInsight, Grand View Research, Persistence Market Research) places the global CBG market between <strong>USD 150M and USD 1.1B in 2025</strong>, with forecast CAGRs ranging from 9.5% to 22% through 2033 depending on definition (isolate-only versus formulated products).</p>
+      <p>The directional signal matters more than the specific number: <strong>over 60% of cannabinoid R&amp;D spend in 2025 targeted minor cannabinoids</strong> (CBG, CBN, CBC) over major ones. CBG-dominant product launches grew 145% year-over-year in early-adopter US states. Approximately <strong>42% of new cannabinoid product innovations now incorporate CBG</strong>.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Global CBG Market 2025</div>
+        <div class="metric-value accent">$150M<small>–$1.1B</small></div>
+        <div class="metric-note">range across analyst definitions</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Forecast CAGR through 2033</div>
+        <div class="metric-value accent">15<small>%</small></div>
+        <div class="metric-note">consensus midpoint · CBG-specific</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Active CBG clinical trials</div>
+        <div class="metric-value warm">12+</div>
+        <div class="metric-note">on ClinicalTrials.gov · phases I–II</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h3>The supply bottleneck</h3>
+      <p>Conventional cannabis flower contains less than 1% CBG. Specialized <strong>Type IV genetics with inactivated THC and CBD synthase</strong> — bred specifically for CBG accumulation — can reach <strong>15–18% CBG content</strong> (Hemp Trading × Polytechnic University of Valencia, 2020 published cultivar). Cornell University evaluated 12 CBG-dominant cultivars in 2020, finding most are <strong>genetically unstable</strong> and require additional breeding cycles to fix the trait. Reliable cultivar sourcing is now the rate-limiting input for the entire category.</p>
+      <p>This is why we lead with <strong>cultivation</strong>, not extraction or downstream products: the upstream genetics-to-flower pipeline is where supply is constrained, and where biodynamic cultivation creates a durable margin advantage that competitors with synthetic-biology approaches don't capture.</p>
+
+      <blockquote>The CBG opportunity in 2026 is not "discover a new molecule." The molecule is well-characterized. The opportunity is "produce it reliably at agricultural scale, with stable genetics, in a regulatory channel where you can sell it." That is a much narrower bottleneck — and a much more defensible one.</blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════ PAGE 3 · WHO ELSE IS BUILDING ═══════ -->
+  <section class="page" id="landscape">
+    <div class="page-num">03 / The R&D landscape</div>
+    <h2>Loma Verde is not <em>alone</em> in this thesis.</h2>
+    <p class="page-lede">Substantial capital is moving into CBG and minor cannabinoids globally. That validates the category — and it also clarifies why an Argentina-based, plant-cultivation-first model is differentiated rather than redundant.</p>
+
+    <div class="prose">
+      <h3>What the leaders are doing</h3>
+      <p>Three categories of player are scaling:</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Selected CBG / minor cannabinoid players</div>
+      <div class="panel-tag">Public companies and well-funded private firms · 2024–2026</div>
+
+      <div class="landscape">
+        <div class="landscape-name">Demetrix</div>
+        <div class="landscape-desc">Berkeley, CA. Yeast-fermentation CBG. ~100 employees, 16,000 sq ft R&amp;D facility. First commercial CBG via biotech in 2022. Founded by Jay Keasling (Amyris).</div>
+        <div class="landscape-tag"><span class="chip active">Biotech</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">Willow Biosciences</div>
+        <div class="landscape-desc">TSX: WLLW. Yeast-based CBG biosynthesis. First commercial fermentation run 2021. Tens of kg of ultra-pure CBG at 10,000L scale by 2022.</div>
+        <div class="landscape-tag"><span class="chip active">Biotech</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">InMed Pharmaceuticals</div>
+        <div class="landscape-desc">NASDAQ: INM. INM-901 cannabinoid program for Alzheimer's, preclinical neuroinflammation data June 2025. Pharmaceutical pipeline approach.</div>
+        <div class="landscape-tag"><span class="chip warm">Pharma</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">MIRA Pharmaceuticals</div>
+        <div class="landscape-desc">NASDAQ: MIRA. Mira-55 non-psychotropic analog. Preclinical morphine-comparable analgesia results, July 2025.</div>
+        <div class="landscape-tag"><span class="chip warm">Pharma</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">Corbus Pharmaceuticals</div>
+        <div class="landscape-desc">NASDAQ: CRBP. CRB-913 CB1 inverse agonist for obesity. First subject dosed in Phase I SAD/MAD March 2025.</div>
+        <div class="landscape-tag"><span class="chip warm">Pharma</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">Hemp Trading × UPV</div>
+        <div class="landscape-desc">Spain. Cultivar with 15–18% CBG content (vs. 0.1–0.5% baseline), zero THC. Patented genetics, Polytechnic University of Valencia partnership.</div>
+        <div class="landscape-tag"><span class="chip">Genetics</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">Oregon CBD Seeds</div>
+        <div class="landscape-desc">USA. First production-ready CBG-dominant seed varieties. DNA-marker-assisted breeding for stable cultivars.</div>
+        <div class="landscape-tag"><span class="chip">Genetics</span></div>
+      </div>
+      <div class="landscape">
+        <div class="landscape-name">Cornell Hemp Program</div>
+        <div class="landscape-desc">Public sector. Multi-year CBG cultivar trials (2020+). Identified genetic instability as core breeding challenge.</div>
+        <div class="landscape-tag"><span class="chip dim">Academic</span></div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h3>What this tells the investor</h3>
+      <p>Three takeaways:</p>
+      <ol>
+        <li><strong>Real R&amp;D money is flowing.</strong> Pharma is running Phase I/II human trials. Biotech raised meaningfully (Demetrix's reported partnerships and ongoing funding rounds; the Amyris × LAVVAN $300M cannabinoid deal; Ginkgo × Cronos $100M; Surterra × Intrexon $100M). The category is well past speculative.</li>
+        <li><strong>The competition is not in our lane.</strong> Demetrix and Willow target high-purity isolate at industrial scale via fermentation — they sell B2B to pharma and personal care brands. Pharma players (InMed, MIRA, Corbus) are running drug-development pipelines aimed at FDA approval. None of these are competing for medical patients in Latin America's largest registered cannabis program.</li>
+        <li><strong>The genetics gap is real.</strong> Cornell's 2020 trial confirmed what experienced growers already know: most "CBG-dominant" cultivars in circulation are genetically unstable. <strong>Stable, high-CBG genetics under biodynamic protocols</strong> are scarce globally. This is the upstream input we are committed to producing.</li>
+      </ol>
+
+      <h3>Where Loma Verde fits</h3>
+      <p>We are not trying to compete with yeast-fermentation biotech on industrial isolate. We are not trying to compete with InMed on Alzheimer's drug development. We are doing something more focused, more defensible, and far more capital-efficient: <strong>cultivating biodynamic CBG flower at small-to-medium scale, on stable genetics, exclusively for an Argentine R&amp;D program serving registered patients</strong>.</p>
+      <p>The biotech-fermentation route makes sense at industrial volumes for high-purity isolate destined for cosmetics or supplements. The botanical-cultivation route makes sense for <strong>medical R&amp;D applications where the entourage effect</strong> — multiple cannabinoids and terpenes acting synergistically — matters clinically. These are different products for different end uses, not direct substitutes.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ PAGE 4 · WHY ARGENTINA ═══════ -->
+  <section class="page" id="argentina">
+    <div class="page-num">04 / Why Argentina</div>
+    <h2>The largest medical cannabis registry in <em>Latin America</em>.</h2>
+    <p class="page-lede">Argentina is not the obvious geography for a cannabis investor in 2026. It should be. The country runs the most established federal patient-cultivation program in Latin America, with over 410,000 registered patients and an unmet waitlist that grows monthly.</p>
+
+    <div class="big-number">
+      <div class="big-number-value">410,000<small>+ patients</small></div>
+      <div class="big-number-label">Registered under Argentina's REPROCANN program · 80,000+ on waitlist</div>
+    </div>
+
+    <div class="prose">
+      <h3>The regulatory landscape — what matters</h3>
+      <p>Argentina has two parallel cannabis frameworks. We operate exclusively in the more stable one.</p>
+
+      <h4>Law 27,350 + REPROCANN (where we operate)</h4>
+      <p>Established 2017, expanded 2020 (Decree 883/2020), reformed 2025 (Resolution 1780/2025). The Ministry of Health runs a national patient registry called <strong>REPROCANN</strong>. Registered patients can legally cultivate cannabis for personal medical use, or designate authorized third parties — including non-profit civil associations and <strong>R&amp;D legal entities</strong> — to cultivate on their behalf. Each non-profit can serve up to 150 registered patients.</p>
+      <p>Our client, Sweet Pacha, is registered as an R&amp;D legal entity under Article 15 of Resolution 1780/2025. This is the channel that 2025 reforms strengthened with stricter physician credentialing, traceability, and quality control — precisely the kind of formalization that creates a durable moat for compliant operators.</p>
+
+      <h4>Law 27,669 + ARICCAME (not our channel)</h4>
+      <p>Separate 2022 commercial framework targeting industrial hemp and pharmaceutical-grade exports. Created a regulator (ARICCAME) that the current administration dissolved in 2025, leaving this channel in flux. <strong>We don't depend on it.</strong> Our entire business model operates within the patient-program channel under the Ministry of Health, which has remained operational throughout political transitions.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-tag">For the US-aware investor</div>
+      <p><strong>The closest US analogue</strong> to the REPROCANN program is the <em>state-level medical cannabis registry + non-profit caregiver model</em> seen in early-stage states. The economic equivalent is closer to Israel's Ministry of Health-supervised medical program in 2015–2018 — a regulated channel with growing patient base, formal physician credentialing, and a clear supply chain for compliant operators.</p>
+      <p>Critically, this is <strong>not</strong> the recreational market. There is no THC dispensary system. Our category is medical-only, prescriber-driven, and structurally protected from the price compression that has hit US recreational margins.</p>
+    </div>
+
+    <div class="prose">
+      <h3>The market is bigger than the cannabis market</h3>
+    </div>
+
+    <div class="metrics cols-2">
+      <div class="metric">
+        <div class="metric-label">LATAM Medical Cannabis 2024</div>
+        <div class="metric-value">$1.59B</div>
+        <div class="metric-note">23.9% CAGR through 2033 · forecast $10.97B by 2033</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Argentina Medical Cannabis 2026E</div>
+        <div class="metric-value accent">$37M</div>
+        <div class="metric-note">Argentine government's 2025 strategic target: $500M domestic + $50M export</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total addressable patients</div>
+        <div class="metric-value warm">410K+</div>
+        <div class="metric-note">registered REPROCANN · plus 80K waitlist as of mid-2025</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Non-profit caregivers per patient</div>
+        <div class="metric-value">150</div>
+        <div class="metric-note">cap per non-profit civil association · forces multi-buyer structure</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The 150-patient cap per non-profit is structurally favorable: it forces a <strong>diversified buyer base</strong> rather than concentration risk in two or three large customers. A competitor that signs five non-profit clients caps at 750 patients. Our three-year target is 27–37 non-profit clients reaching ~5,500 patients indirectly, through Sweet Pacha as the legally authorized intermediary.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ PAGE 5 · LOMA VERDE MODEL ═══════ -->
+  <section class="page" id="loma-verde">
+    <div class="page-num">05 / The Loma Verde model</div>
+    <h2>Cultivation as a <em>service</em>. Plant Library as a <em>moat</em>.</h2>
+    <p class="page-lede">We don't own patients, we don't sell to consumers, and we don't take inventory risk. We operate 8,000 m² of certified biodynamic cultivation, exclusively under a service agreement with a licensed R&amp;D principal. The plants belong to the client; we deliver the cultivation expertise.</p>
+
+    <div class="prose">
+      <h3>The structure</h3>
+      <p>Three economic actors, clean separation:</p>
+    </div>
+
+    <table class="t">
+      <tr><th>Role</th><th>Entity</th><th>Function</th></tr>
+      <tr>
+        <td>Cultivation services provider</td>
+        <td><strong>Loma Verde SRL</strong></td>
+        <td>Owns and operates the 8,000 m² Escobar facility. Provides agronomic expertise, biodynamic protocols, R&amp;D support. Charges a monthly service fee in USD. <strong>No license, no patient data, no product ownership.</strong></td>
+      </tr>
+      <tr>
+        <td>R&amp;D principal · sole client</td>
+        <td><strong>Sweet Pacha</strong></td>
+        <td>Holds the R&amp;D legal entity registration under Resolution 1780/2025. Owns plants, owns patient relationships, owns regulatory compliance. Pays Loma Verde a fixed monthly fee.</td>
+      </tr>
+      <tr class="total">
+        <td>End buyers</td>
+        <td><strong>Non-profit civil associations</strong></td>
+        <td>Each registered with REPROCANN. Up to 150 registered patients per non-profit. Contract directly with Sweet Pacha.</td>
+      </tr>
+    </table>
+
+    <div class="prose">
+      <p>This separation is not bureaucratic theater. It is the legal structure that the 2025 reforms specifically created and reinforced: <strong>R&amp;D entities operate alongside non-profit caregivers, with cultivation services explicitly permitted as a delegated function</strong>. We were designed for this framework, not retrofitted into it.</p>
+
+      <h3>Plant Library — the operational moat</h3>
+      <p>Our 8,000 m² site is divided into 120 marked parcels of 1 m² each, plus support infrastructure. Each parcel is dedicated to a specific genetic line, biodynamically managed, and fully traceable from clone to harvest. We call this the <strong>Plant Library</strong>.</p>
+      <p>Why this matters: a non-profit serving 150 patients with cancer-related neuropathy needs a different cannabinoid profile than one serving 150 patients with treatment-resistant epilepsy or chronic pain. The Plant Library lets us match parcels to specific therapeutic targets — and accumulate, year over year, a <strong>library of stable genetics + proven cultivation protocols + clinical observations</strong> that compounds in value.</p>
+      <p>This is the asset that competitors with biotech-fermentation models structurally cannot replicate. They produce one molecule at high purity. We produce a <strong>portfolio of full-spectrum extracts</strong>, each tied to a specific patient cohort and clinical question.</p>
+    </div>
+
+    <h3 class="prose" style="margin-top:36px">Site distribution · 8,000 m²</h3>
+
+    <table class="t">
+      <tr><th>Zone</th><th>m²</th><th>%</th><th>Function</th></tr>
+      <tr><td>Phase 1 greenhouses · 4 units + biological corridors</td><td class="hi">1,460</td><td>18.3%</td><td>Year 1 production · vegetative + flower</td></tr>
+      <tr><td>Phase 2 greenhouses · 6 units</td><td class="hi">920</td><td>11.5%</td><td>Year 2–3 expansion</td></tr>
+      <tr><td>Outdoor R&amp;D · Plant Library 1 m² parcels</td><td class="hi">480</td><td>6.0%</td><td>120 parcels · genetic isolation</td></tr>
+      <tr><td>Biodynamic garden · companion planting</td><td class="hi">640</td><td>8.0%</td><td>Pest balance · biodynamic prep</td></tr>
+      <tr><td>Drying barn (dairy-converted)</td><td class="hi">400</td><td>5.0%</td><td>Curing · pre-extraction prep</td></tr>
+      <tr><td>Multi-purpose room (SUM)</td><td class="hi">128</td><td>1.6%</td><td>Visits · institutional meetings</td></tr>
+      <tr><td>Composting + biodynamic preparations</td><td class="hi">320</td><td>4.0%</td><td>Steiner preparations 500–508</td></tr>
+      <tr><td>Containers · office, lab, storage</td><td class="hi">144</td><td>1.8%</td><td>3 modules · ISO-7 micropropagation</td></tr>
+      <tr><td>Livestock yard · bees + hens</td><td class="hi">680</td><td>8.5%</td><td>Biodynamic completeness</td></tr>
+      <tr><td>Pathways + biological corridors</td><td class="hi">520</td><td>6.5%</td><td>Beneficial fauna refuges</td></tr>
+      <tr><td>Perimeter security · fence + 2 stations + drones</td><td class="hi">380</td><td>4.7%</td><td>24/7 monitoring</td></tr>
+      <tr><td>Tree barrier · 14 plane trees + 3 aguaribay</td><td class="hi">390</td><td>4.9%</td><td>Visual + phytosanitary buffer</td></tr>
+      <tr><td>Reserve / future expansion</td><td class="hi">1,538</td><td>19.2%</td><td>Operational buffer</td></tr>
+      <tr class="total"><td>TOTAL</td><td class="hi">8,000</td><td>100%</td><td>Rectangular plot ≈ 120 × 67 m</td></tr>
+    </table>
+
+    <div class="prose">
+      <h3>What we measure (and what we don't)</h3>
+      <p>Throughout this memo we describe scale in <strong>m² under cultivation, parcels, genetic lines, and production cycles</strong> — not in mass units. This is a deliberate choice that aligns with how cultivation services are priced under our service agreement and with how regulators measure capacity. The standard production cycle is four months; we run three cycles per year staggered across the facility.</p>
+    </div>
+
+    <div class="metrics cols-4">
+      <div class="metric">
+        <div class="metric-label">Plant Library</div>
+        <div class="metric-value accent">120</div>
+        <div class="metric-note">parcels · 1 m² each</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Active genetic lines · Year 3</div>
+        <div class="metric-value accent">35</div>
+        <div class="metric-note">CBG-dominant + supporting profiles</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Production cycles per year</div>
+        <div class="metric-value warm">3</div>
+        <div class="metric-note">staggered · 4 months each</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Greenhouses operational · Year 3</div>
+        <div class="metric-value">10</div>
+        <div class="metric-note">4 in Year 1, 7 in Year 2, 10 in Year 3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PAGE 6 · TRACTION & EXECUTION ═══════ -->
+  <section class="page" id="traction">
+    <div class="page-num">06 / Traction &amp; execution</div>
+    <h2>What's <em>built</em>. What's <em>next</em>.</h2>
+    <p class="page-lede">We are not pre-revenue and we are not pre-infrastructure. The 8,000 m² site is owned, the Phase 1 greenhouses are built, and the R&amp;D service contract is structured. The seed round funds the next 180 days of operational ramp.</p>
+
+    <div class="prose">
+      <h3>Already built · USD 202,000 of sunk CAPEX</h3>
+      <p>The founders have personally funded the foundation of the project. <strong>USD 202,000 (ARS 286 million)</strong> is already deployed across the items below. This is the work that was done before fundraising, not promises to be funded by the round.</p>
+    </div>
+
+    <table class="t">
+      <tr><th>Built / deployed</th><th>USD</th></tr>
+      <tr><td>5 Phase 1 greenhouses · structure + cover</td><td class="hi">17,700</td></tr>
+      <tr><td>Drip irrigation system</td><td class="hi">3,540</td></tr>
+      <tr><td>Olympic-grade perimeter fencing</td><td class="hi">7,080</td></tr>
+      <tr><td>Drying barn + curing equipment</td><td class="hi">17,700</td></tr>
+      <tr><td>Supplemental lighting</td><td class="hi">3,540</td></tr>
+      <tr><td>Office / lab / storage containers (3 units)</td><td class="hi">10,620</td></tr>
+      <tr><td>Site preparation + earthworks</td><td class="hi">710</td></tr>
+      <tr><td>Security cameras (24/7 monitoring)</td><td class="hi">3,540</td></tr>
+      <tr><td>Field tools + small equipment</td><td class="hi">4,250</td></tr>
+      <tr><td>Pre-operative + first-cycle working capital</td><td class="hi">133,865</td></tr>
+      <tr class="total"><td>Total sunk CAPEX</td><td class="hi">202,545</td></tr>
+    </table>
+
+    <div class="prose">
+      <h3>What the round funds — 100% growth CAPEX</h3>
+    </div>
+
+    <table class="t">
+      <tr><th>Use of funds</th><th>USD</th><th>%</th></tr>
+      <tr><td><strong>Phase 2 greenhouse acceleration · 2 units, 180 m² each</strong></td><td class="hi">60,000</td><td>24%</td></tr>
+      <tr><td><strong>Climate-controlled drying / curing facility</strong> · HVAC, dehumidifiers</td><td class="hi">55,000</td><td>22%</td></tr>
+      <tr><td><strong>Tissue-culture micropropagation lab</strong> · ISO-7 container, laminar flow, autoclave</td><td class="hi">38,000</td><td>15%</td></tr>
+      <tr><td><strong>Advanced fertigation system</strong> · PLC-controlled drip, sensors, dataloggers</td><td class="hi">28,000</td><td>11%</td></tr>
+      <tr><td><strong>LED supplemental lighting</strong> · for greenhouses + flowering rooms</td><td class="hi">22,000</td><td>9%</td></tr>
+      <tr><td><strong>Analytical equipment</strong> · HPLC outsourcing year 1 → owned year 2</td><td class="hi">18,000</td><td>7%</td></tr>
+      <tr><td><strong>ISO 9001 + Demeter biodynamic certification process</strong></td><td class="hi">15,000</td><td>6%</td></tr>
+      <tr><td><strong>Operational contingency buffer</strong> · 6%</td><td class="hi">14,000</td><td>6%</td></tr>
+      <tr class="total"><td>Total round</td><td class="hi">250,000</td><td>100%</td></tr>
+    </table>
+
+    <div class="prose">
+      <h3>Roadmap · next 180 days</h3>
+    </div>
+
+    <div class="timeline">
+      <div class="step done">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>Site acquired and Phase 1 built</strong>8,000 m² Escobar · perimeter, greenhouses, security operational</div>
+        <div class="step-meta">Done · 2024–2025</div>
+      </div>
+      <div class="step done">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>R&amp;D entity structure validated</strong>Service agreement framework with Sweet Pacha · legal review complete</div>
+        <div class="step-meta">Done · Q1 2026</div>
+      </div>
+      <div class="step active">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>Seed round close</strong>USD 250K · founders + external investors</div>
+        <div class="step-meta">Now · Q2 2026</div>
+      </div>
+      <div class="step">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>Phase 2 greenhouses + climate facility online</strong>From 5 to 7 operational greenhouses · 6 months ahead of base plan</div>
+        <div class="step-meta">Q3 2026</div>
+      </div>
+      <div class="step">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>Tissue-culture lab + first 15 stable genetics</strong>Clean-stock CBG cultivars validated and propagated</div>
+        <div class="step-meta">Q4 2026</div>
+      </div>
+      <div class="step">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>First service revenue at run-rate</strong>USD 22K monthly fee · 60 active Plant Library parcels</div>
+        <div class="step-meta">Month 7</div>
+      </div>
+      <div class="step">
+        <div class="step-dot"></div>
+        <div class="step-text"><strong>ISO 9001 + Demeter biodynamic gap analysis complete</strong>Certification track started · estimated 12-month path</div>
+        <div class="step-meta">Q1 2027</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PAGE 7 · TEAM ═══════ -->
+  <section class="page" id="team">
+    <div class="page-num">07 / Team</div>
+    <h2>Three founders. <em>Aligned</em> on biodynamic + R&amp;D.</h2>
+    <p class="page-lede">Loma Verde is a three-founder partnership with complementary backgrounds in operations, agriculture, and finance. Detailed CVs available on request post-NDA. Lead operator is Vic, a part-time founder with structured 25-hour weekly commitment and a contracted Chief of Staff handling delegation.</p>
+
+    <div class="prose">
+      <h3>Equity and commitment</h3>
+      <p>All three founders contribute USD 30,000 each (USD 90K total) as <strong>irrevocable equity capital</strong> at round close. This is real money on the same terms — not founder shares in exchange for sweat equity. We believe an investor's first question on any cannabis project should be: <em>how much of their own cash is the team putting in?</em> Our answer is 36% of the round.</p>
+
+      <h3>Operating model</h3>
+      <p>Day-to-day operations are run by an on-site team contracted under Argentina's UATRE agricultural framework: a foreman, four base operators, and a fractional agronomist transitioning to full-time by month 12. A Chief of Staff coordinates between the three founders and reports operational metrics to the investor pool quarterly.</p>
+      <p>The 180-day post-funding plan (available as a separate operational document) details week-by-week milestones, hiring targets, KPI cadence, and contingency plans for the most likely operational risks. It is not aspirational — it is a working tool already being executed against by the operating team.</p>
+    </div>
+
+    <div class="callout warm">
+      <div class="callout-tag">Risk we own</div>
+      <p>Argentina is not a politically stable jurisdiction. The 2025 dissolution of ARICCAME demonstrated that. <strong>Our specific channel — patient registry under the Ministry of Health — has remained operational throughout political transitions</strong> because it serves an established patient base with formal medical credentialing. But this is Argentina, and a US investor needs to understand: the regulatory environment can shift faster than in most OECD countries.</p>
+      <p>Our mitigation is structural: we operate through the most institutionally protected channel (registered patients with prescribing physicians), our CAPEX is paid for in pesos against USD-denominated revenue (natural FX hedge), and our service-only structure means we do not hold inventory, do not own product, and do not depend on export licensing to monetize.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ PAGE 8 · FINANCIALS & ASK ═══════ -->
+  <section class="page" id="ask">
+    <div class="page-num">08 / Financials &amp; the ask</div>
+    <h2>Returns on three <em>scenarios</em>.</h2>
+    <p class="page-lede">We anchor on economics, not on a specific instrument. Below are the three scenarios with assumed annual EBITDA, the implied debt-service coverage on the loan-note structure, and the equity-equivalent IRR for an investor who prefers an equity instrument.</p>
+
+    <table class="t">
+      <tr>
+        <th>Scenario</th>
+        <th>Monthly fee</th>
+        <th>Year 2 EBITDA</th>
+        <th>Loan note coverage at M24</th>
+        <th>Equity-equivalent IRR (5y)</th>
+      </tr>
+      <tr>
+        <td>Conservative</td>
+        <td class="hi">USD 18,000</td>
+        <td class="hi">USD 80,000</td>
+        <td><span class="chip warm">Tight</span> 1.0×</td>
+        <td><span class="chip">~14% USD</span></td>
+      </tr>
+      <tr>
+        <td>Base</td>
+        <td class="hi">USD 24,000</td>
+        <td class="hi">USD 145,000</td>
+        <td><span class="chip active">Comfortable</span> 1.4×</td>
+        <td><span class="chip active">~24% USD</span></td>
+      </tr>
+      <tr class="total">
+        <td>Optimistic</td>
+        <td class="hi">USD 32,000</td>
+        <td class="hi">USD 215,000</td>
+        <td><span class="chip active">Strong</span> 1.7×</td>
+        <td><span class="chip active">~32% USD</span></td>
+      </tr>
+    </table>
+
+    <div class="prose">
+      <h3>The waterfall</h3>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Round structure · USD 250,000</div>
+      <div class="panel-tag">Founder equity + external investor capital</div>
+
+      <div class="wf">
+        <div class="wf-row">
+          <div class="wf-label">Founder 1 · equity contribution</div>
+          <div class="wf-track"><div class="wf-fill" style="width:12%"></div></div>
+          <div class="wf-val">$30K</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-label">Founder 2 · equity contribution</div>
+          <div class="wf-track"><div class="wf-fill" style="width:12%"></div></div>
+          <div class="wf-val">$30K</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-label">Founder 3 · equity contribution</div>
+          <div class="wf-track"><div class="wf-fill" style="width:12%"></div></div>
+          <div class="wf-val">$30K</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-label">External investor(s) · open instrument</div>
+          <div class="wf-track"><div class="wf-fill warm" style="width:64%"></div></div>
+          <div class="wf-val">$160K</div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-label">Total round</div>
+          <div class="wf-track"><div class="wf-fill total" style="width:100%"></div></div>
+          <div class="wf-val">$250K</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h3>Instrument flexibility</h3>
+      <p>We propose anchoring on economics, then selecting the instrument that fits the investor's mandate. Three structures we are open to:</p>
+    </div>
+
+    <table class="t">
+      <tr>
+        <th>Instrument</th>
+        <th>Mechanics</th>
+        <th>Best for</th>
+      </tr>
+      <tr>
+        <td><strong>Loan note · current default</strong></td>
+        <td>USD 160K principal at 10% annual USD, 24-month bullet-modified. Year 1 interest paid M12 (USD 16K). Principal + Year 2 interest paid M24 (USD 176K). Total return USD 192K = 20% bruto. No equity dilution. No personal guarantee. Pari passu unsecured.</td>
+        <td>Family offices · individual investors with fixed-income sleeve · founders with conviction in cashflow but lower comfort with equity volatility</td>
+      </tr>
+      <tr>
+        <td><strong>SAFE / convertible note</strong></td>
+        <td>USD 160K principal converts to equity at next priced round. Standard discount + valuation cap structure. Interest accrual optional. Most familiar instrument for US-based cannabis VCs.</td>
+        <td>VCs and angels who want optionality on upside · investors who expect the project to raise a Series A in 18–24 months</td>
+      </tr>
+      <tr class="total">
+        <td><strong>Direct equity</strong></td>
+        <td>USD 160K for negotiated minority equity stake at agreed valuation. Standard SHA terms (drag-along, tag-along, info rights). Founders maintain 75%+ majority including their USD 90K contribution.</td>
+        <td>Investors with long-term horizon, comfortable with Argentina-specific governance, who want maximum upside participation</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <div class="callout-tag">Closing terms</div>
+      <p><strong>Round target:</strong> USD 160K from one or two external investors. <strong>Minimum check:</strong> USD 25K. <strong>Maximum check:</strong> USD 100K (we want at least two investors, not one). <strong>Timeline:</strong> 60 days from first NDA to wire. <strong>Reporting:</strong> quarterly investor letter, monthly KPI dashboard, semi-annual on-site visit option. <strong>Governance:</strong> non-voting observer seat on consultative committee (not full board).</p>
+    </div>
+
+    <div class="prose">
+      <h3>Why we believe this is the right opportunity right now</h3>
+      <p>Three things are simultaneously true in 2026, and the alignment is what creates the window:</p>
+      <ul>
+        <li>The CBG science has crossed from speculative to <strong>active Phase I/II human trials</strong>, validating the molecule's clinical potential without yet flooding the market with competing supply.</li>
+        <li>Argentina has the largest, most stable patient registry in Latin America, with <strong>regulatory reforms (Resolution 1780/2025) that specifically reinforced the R&amp;D + non-profit caregiver channel we operate in</strong>.</li>
+        <li>Our 8,000 m² Phase 1 infrastructure is <strong>built and paid for</strong>. The seed round is for growth acceleration, not foundational construction. The investor is funding the second curve, not the first.</li>
+      </ul>
+      <p>If you are interested in continuing the conversation, the next step is a 30-minute call to discuss specific concerns, followed by an NDA and access to the full data room (operational plan, financial model, regulatory documentation, team CVs). We can be reached at the contact below.</p>
+    </div>
+
+    <hr>
+
+    <div class="callout dim">
+      <div class="callout-tag">Disclaimer</div>
+      <p>This memo is a confidential summary intended for accredited investors evaluating a potential investment in Loma Verde SRL. Forecasts are based on internal modeling and publicly available market data; actual results may differ materially. CBG market sizing references multiple analyst sources (DelveInsight, Grand View Research, Persistence Market Research, Verified Market Reports) which use varying definitions; we cite ranges rather than point estimates where appropriate. Argentina-specific regulatory information reflects the framework as of April 2026 and is subject to change. This memo is not an offer of securities; any offering will be made through formal subscription documents and applicable disclosure materials. All cannabis-related investments carry regulatory and political risk specific to the jurisdictions of operation.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <div class="footer">
+    <div>
+      <strong>Loma Verde SRL</strong> · Investor Memo v1.0 · April 2026<br>
+      Confidential · Distribution restricted to recipients identified by sender
+    </div>
+    <div class="footer-right">
+      Escobar · Buenos Aires Province<br>
+      34°20'06.51"S · 58°51'47.05"W
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
